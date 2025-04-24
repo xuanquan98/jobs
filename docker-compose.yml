@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "54320:5432"
+volumes:
+  db:
+    driver: local
